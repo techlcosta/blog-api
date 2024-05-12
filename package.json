@@ -4,7 +4,7 @@
   "main": "server.js",
   "license": "MIT",
   "scripts": {
-    "start": "node build/server.js",
+    "start": "node dist/server.js",
     "dev": "tsx watch src/server.ts",
     "build": "tsup src",
     "format": "prettier --write .",
