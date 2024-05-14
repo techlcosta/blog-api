@@ -2,9 +2,9 @@ services:
   web:
     build: .
     ports:
-      - "3100:3100"
+      - "3330:3330"
     restart: unless-stopped
-    
+
   mongodb:
     image: mongo:latest
     container_name: mongo_blog
