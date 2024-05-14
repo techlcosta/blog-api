@@ -4,3 +4,29 @@ services:
     ports:
       - "3330:3330"
     restart: unless-stopped
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongo_blog
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    volumes:
+      - mongo_blog:/data/db
+
+  redis:
+    image: 'redis:latest'
+    container_name: redis_blog
+    restart: always
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis_blog:/data
+
+volumes:
+  mongo_blog:
+    external: true
+  redis_blog:
+    external: true
