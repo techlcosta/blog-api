@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    ports:
+      - "3330:3330"
+    networks:
+      - dx
+    env_file:
+      - .env
+
+networks:
+  dx:
+    external: true
